@@ -1,0 +1,70 @@
+<!-- <div class="header"> -->
+    <mat-icon class="close-icon" (click)="onNoClick()">close</mat-icon>
+<h1 mat-dialog-title>Define Targets for {{data.cluster.name}}</h1>
+
+<!-- </div> -->
+<h6>Target List </h6>
+
+<div mat-dialog-content class="main-container">
+  <mat-card class="target-card">
+    <mat-card-content>
+      <mat-nav-list *ngFor="let target of targetList">
+        <!-- <a mat-list-item href="..." *ngFor="let link of links"> {{ link }} </a> -->
+        <a mat-list-item [ngClass]="{ active: clickedItem === target.id }" (click)="onClick(target)"> {{target.name}}
+        </a>
+      </mat-nav-list>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="form-card">
+    <!-- <mat-card-content class="example-container"> -->
+    <mat-card-content>
+      <form class="example-container" #targetForm="ngForm">
+        <mat-form-field>
+          <input matInput id="name" name="name" [disabled]="isDisable" [(ngModel)]="dialogModel.name" placeholder="Target">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput id="path" name="path" [disabled]="isDisable" [(ngModel)]="dialogModel.path" placeholder="Path">
+        </mat-form-field>
+
+
+        <div mat-dialog-actions>
+          <mat-chip-list>
+            <mat-chip color="primary" (click)="addNewTarget()">Add New Target</mat-chip>
+            <div *ngIf="!isDisable">
+              <mat-icon class="save-icon" matTooltip="Save" [swal]="saveSwal" (confirm)="save(dialogModel)">save</mat-icon>
+            </div>
+            <div *ngIf="isDisable">
+              <i class=" save-icon material-icons md-light md-inactive">save</i>
+            </div>
+            <div *ngIf="!isDisable">
+              <mat-icon matTooltip="Delete" [swal]="deleteSwal" (confirm)="delete(dialogModel)">delete</mat-icon>
+            </div>
+            <div *ngIf="isDisable">
+              <i class="material-icons md-light md-inactive">delete</i>
+            </div>
+          </mat-chip-list>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<swal
+  #saveSwal
+  title="Question?"
+  text="This will save all the cluster machines. Are you sure you want to proceed?"
+  [showCancelButton]="true"
+  [showCloseButton]="true"
+ >
+</swal>
+
+<swal
+  #deleteSwal
+  title="Question?"
+  text="Are you sure you want to remove this target from the machine?"
+  [showCancelButton]="true"
+  [showCloseButton]="true"
+  [swal]="deleteSuccessSwal" 
+ >
+</swal>

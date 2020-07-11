@@ -1,0 +1,73 @@
+<div class="main__container">
+  <mat-card class="login-card"> 
+     <mat-card-content class="login-content">
+      <form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="language-selector">
+          <a mat-raised-button color="primary" (click)="useLanguage('en')">
+           en
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a mat-raised-button color="primary" (click)="useLanguage('fr')">
+            fr
+           </a>
+        </div>
+        <hr>
+        <div class="form-group">
+          <input class="login-input"
+            type="text"
+            class="form-control"
+            id="userName"
+            required
+            [(ngModel)]="loginModel.userName"
+            name="userName"
+            #userName="ngModel"
+            [placeholder]="'Login Id' | translate"
+          />
+          <div
+            [hidden]="userName.valid || userName.pristine"
+            class="alert alert-danger"
+          >
+          UserName is required
+          </div>
+        </div>
+
+        <div class="form-group">
+      
+          <input class="login-input"
+            type="password"
+            class="form-control"
+            id="password"
+            required
+            [(ngModel)]="loginModel.password"
+            name="password"
+            #password="ngModel"
+            [placeholder]="'password' | translate"
+          />
+          <div
+            [hidden]="password.valid || password.pristine"
+            class="alert alert-danger"
+          >
+          Password is required
+          </div>
+        </div>
+<div class="text-center">
+        <button type="submit" class="btn btn-success login-btn" [disabled]="!loginForm.form.valid" >
+         <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader>
+          <span translate>Login</span>
+        </button>
+      </div>
+     
+      </form>
+    </mat-card-content> 
+   </mat-card>
+<mat-card class="image-card">
+  <mat-card-content>
+      <img class="logo-image" src="../../assets/images/logo_sita.PNG" alt="Sita Logo">
+ <h2 class="header-text"><i>{{ 'Deployment Tool' | translate }}</i></h2>  
+</mat-card-content>
+
+</mat-card>
+  
+</div>
+
+

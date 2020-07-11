@@ -1,0 +1,135 @@
+h1 {
+  text-align: center;
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+  margin-top: 1em;
+}
+h2,
+h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.no-style .ng-valid {
+  border-left: 1px solid #ccc;
+}
+
+.no-style .ng-invalid {
+  border-left: 1px solid #ccc;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.main__container {
+  // background: #30485f;
+  // background: -webkit-linear-gradient(top left, #30485f, #2f465c);
+  // background: -moz-linear-gradient(top left, #30485f, #2f465c);
+  // background: linear-gradient(to bottom right, #30485f, #2f465c);
+  background: linear-gradient(to top, #09203f, #537895);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.login-card {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5%;
+}
+
+.image-card {
+  width: 35%;
+  height: 30%;
+  background-color: transparent;
+  margin-bottom: 10%;
+}
+
+
+.login__illustration {
+  height: 80%;
+  width: 80%;
+}
+
+.login-welcome-text {
+  color: #39437a;
+  letter-spacing: 0.03rem;
+  margin-bottom: 2.5rem;
+}
+
+.login-input {
+  margin: 0.75rem 0;
+  padding: 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  // box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.login-btn {
+ // background: linear-gradient(#30485f, #2f465c);
+  //background: linear-gradient(#30485F, #2f465c);
+  background-color: #30485F;
+  padding: 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: #30485F;
+}
+.login-btn:hover {
+  //background: linear-gradient(to right, #30485f, #4c6985);
+  background: linear-gradient(to right, #30485F, #2f465c);
+}
+
+.login-input::placeholder {
+ // color: #30485f;
+  color: #39437a;
+    //background: linear-gradient(#30485F, #2f465c);
+  font-size: 0.9rem;
+}
+
+
+.logo-image {
+  width: 80%;
+  height: 80%;
+}
+
+.header-text {
+  color: white;
+  padding-left: 25%;
+}
+
+
+.inline-loader {
+  display: inline-block;
+}

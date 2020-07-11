@@ -1,0 +1,167 @@
+<h2 class="main-header" color="primary">Cluster Manager</h2>
+<h5 class="header" color="primary">Server List</h5>
+
+<div fxLayout="row" >
+  <div fxFlex="1"></div>
+  <div fxFlex="24" fxFlexAlign="stretch">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+      <mat-nav-list dense *ngFor="let c of cluster">
+        <a
+          mat-list-item
+          [ngClass]="{ active: clickedItem === c.id }"
+          (click)="onClick(c.id)"
+          (click)="selectRow(c)"
+          >{{ c.name }}</a
+        >
+      </mat-nav-list>
+    </cdk-virtual-scroll-viewport>
+    <!-- <div>
+            <mat-nav-list dense *ngFor="let c of cluster" >
+                <a mat-list-item [ngClass]="{active: clickedItem === c.Id}"  (click)="onClick(c.Id)" (click)="selectRow(c)">{{c.Name}}</a>
+            </mat-nav-list>
+        </div> -->
+  </div>
+  <div fxFlex="2"></div>
+  <div fxFlex="71">
+    <mat-card>
+      <mat-card-content class="text-center">
+        <form class="example-container" [formGroup]="clusterForm">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Server Name"
+              formControlName="name"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="IP"
+              formControlName="ip"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Port"
+              formControlName="port"
+            />
+          </mat-form-field>
+          <mat-form-field *ngIf="isXapFileChecked">
+            <input
+              matInput
+              placeholder="Application"
+              formControlName="applicationName"
+            />
+          </mat-form-field>
+          <section class="checkbox-section">
+            <mat-checkbox
+              type="checkbox"
+              class="checkbox-margin"
+              formControlName="xapFile"
+              (change)="checkXapFile(clusterForm.value.xapFile)"
+              >XAP File </mat-checkbox
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button
+              *ngIf="isXapFileChecked || isDatabaseScriptChecked"
+              mat-raised-button
+              color="primary"
+              (click)="openDialog(clusterForm.value,'XapFile')"
+            >
+              Defines Targets
+            </button>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox
+              class="checkbox-margin"
+              formControlName="databaseScript"
+              (change)="checkDatabaseScript(clusterForm.value.databaseScript)"
+              >Database Script
+            </mat-checkbox>
+            <button
+              *ngIf="isDocumentationChecked"
+              mat-raised-button
+              color="primary"
+              (click)="openDialog(clusterForm.value,'Documentation')"
+            >
+              Defines Targets
+            </button>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox
+              class="checkbox-margin"
+              formControlName="documentation"
+              (change)="checkDocumentation(clusterForm.value.documentation)"
+              >Documentation
+            </mat-checkbox>
+          </section>
+        </form>
+      </mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="end">
+        <button 
+          class="delete-button"
+          mat-raised-button
+          [disabled]="!clusterForm.valid"
+          color="primary"
+          [swal]="deleteSwal" (confirm)="delete(clusterForm.value.id)"
+        >
+          Delete
+        </button>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" >
+        <div fxFlex="85" >
+        <button 
+          class="add-new-button"
+          mat-raised-button
+          (click)="addNewServer()"
+          color="primary"
+        >
+        Add New Server
+        </button>
+      </div>
+        <div fxFlex="15">
+        <button
+          type="Submit"
+          mat-raised-button
+          [disabled]="!clusterForm.valid"
+          color="primary"
+          [swal]="saveSwal" (confirm)="save(clusterForm)"
+        >
+          Save
+        </button>
+      </div>
+      <div >
+        <button
+          class="cancel-button"
+          [disabled]="!clusterForm.valid"
+          mat-raised-button
+          color="primary"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+      </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex="2"></div>
+</div>
+
+<swal
+  #saveSwal
+  title="Question?"
+  text="This will save all the cluster machines. Are you sure you want to proceed?"
+  [showCancelButton]="true"
+  [showCloseButton]="true"
+ >
+</swal>
+
+<swal
+  #deleteSwal
+  title="Question?"
+  text="This will save all the cluster machines. Are you sure you want to proceed?"
+  [showCancelButton]="true"
+  [showCloseButton]="true"
+  [swal]="deleteSuccessSwal" 
+ >
+</swal>

@@ -1,0 +1,17 @@
+    
+{
+    "Home": "Home",
+    "Login": "Sign In",
+    "Logout": "Logout",
+    "Password": "Password",
+    "Login Id": "Login Id",
+    "Version": "Version",
+    "Deployment": "Deployment",
+    "Tool": "Tool",
+    "Title": "Deployment Tool",
+    "Cluster": "Cluster",
+    "Schedule": "Schedule",
+    "Package": "Package",
+    "Manager": "Manager",
+    "Clients": "Clients"
+}

@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"  fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'side' : 'side'"
+      [opened]="!(isHandset$ | async)">
+      <!-- <mat-toolbar>
+        
+      </mat-toolbar> -->
+    <nav class="deployment-menu">
+      <div class="text-center">
+        <img src="../../assets/images/SitaLogo.PNG" height="50" width="150"/>
+      </div>
+      <div class="deployment-btn" routerLink="cluster" routerLinkActive="active">
+          <mat-icon aria-label="Side nav toggle icon">important_devices</mat-icon>
+          &nbsp;&nbsp;{{'Cluster' | translate}} 
+      </div>
+      <div class="deployment-btn" routerLink="schedule">
+          <mat-icon aria-label="Side nav toggle icon">schedule</mat-icon>
+          &nbsp;&nbsp;{{'Schedule' | translate}}
+      </div>
+      <div class="deployment-btn" routerLink="package">
+          <mat-icon aria-label="Side nav toggle icon">web_asset</mat-icon>
+          &nbsp;&nbsp;{{'Package' | translate}}
+      </div>
+      <div class="deployment-btn" routerLink="manager">
+          <mat-icon aria-label="Side nav toggle icon">now_widgets</mat-icon>
+          &nbsp;&nbsp;{{'Manager' | translate}}
+      </div>
+      <div class="deployment-btn" routerLink="clients">
+          <mat-icon aria-label="Side nav toggle icon">computer</mat-icon>
+          &nbsp;&nbsp;{{'Clients' | translate}}
+      </div>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{ 'Title' | translate }}</span>
+        <div class="right-menu">
+          <button class="logout-btn" (click)="logout()">
+              <mat-icon aria-label="Side nav toggle icon">logout</mat-icon>
+              <span class="text-icon">{{ 'Logout' | translate}}</span>
+          </button>
+        </div>
+    </mat-toolbar>
+
+    <!-- <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader> -->
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

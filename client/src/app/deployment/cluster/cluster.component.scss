@@ -1,0 +1,83 @@
+.main-header {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.header {
+  padding-left: 10px;
+}
+
+.mat-list-item {
+  cursor: pointer;
+  font-size :12px;
+  background: #556e8b;
+  color: white !important;
+}
+
+.mat-list-item:hover {
+  color: #fff !important;
+  background: #757575;
+  border: none;
+  text-align: center;
+  position: relative;
+}
+
+.active {
+  color: #fff !important;
+  background: #757575;
+  border: none;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease 0s;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.checkbox-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.checkbox-margin {
+  margin: 0 10px;
+}
+
+.delete-button {
+ margin-bottom: 5px;
+}
+
+.mat-form-field {
+  font-size: 12px;
+}
+
+.mat-checkbox {
+  font-size: 12px;
+}
+
+.mat-raised-button {
+  font-size: 12px;
+}
+
+.example-viewport {
+  height: 78vh;
+  border: 1px solid black;
+}
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+    background: linear-gradient(#30485F, #2f465c);
+}
+
+.inline-loader {
+  display: inline-block;
+}

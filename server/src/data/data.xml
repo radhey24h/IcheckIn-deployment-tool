@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClusterServer
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.sita.aero/NWAF/Communication">
+	<ClusterMachines ApplicationName="iCheckAI" Id="1469" Name="AI" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1550" Name="DME KIOSK" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="ss" Id="1529" Name="DVWeb" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckEQ" Id="1669" Name="EQ" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckMH" Id="1390" Name="MH" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1427" Name="MHBAG" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1709" Name="New Machine" Ip="0.0.0.0" Port="80" DatabaseScript="false" Documentation="true" XapFile="false"/>
+	<ClusterMachines Id="1407" Name="RO" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckMH" Id="1570" Name="TEST" Ip="localhost" Port="54196" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckUX" Id="1649" Name="UX" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="7I WEB" Id="1569" Name="WEB SERVER 7I WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebAI" Id="1470" Name="WEB SERVER AI WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1448" Name="WEB SERVER DME WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebDT" Id="1616" Name="WEB SERVER DT WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebEQ" Id="1489" Name="WEB SERVER EQ WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1650" Name="WEB SERVER IR KIOSK" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1468" Name="WEB SERVER J2" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebJ2" Id="1689" Name="WEB SERVER J2 WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckwebLX" Id="1388" Name="WEB SERVER LX" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckLX" Id="1389" Name="WEB SERVER LX WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebMH" Id="1428" Name="WEB SERVER MH WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines ApplicationName="iCheckWebRO" Id="1729" Name="WEB SERVER RO WEB" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+	<ClusterMachines Id="1387" Name="WF SERVER" Ip="10.91.148.213" Port="8080" DatabaseScript="true" Documentation="false" XapFile="false" />
+	<ClusterMachines ApplicationName="iCheckWebZZ" Id="1749" Name="ZZ Web" Ip="10.91.148.213" Port="8080" DatabaseScript="false" Documentation="false" XapFile="true" />
+</ClusterServer>
